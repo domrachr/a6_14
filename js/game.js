@@ -2,7 +2,7 @@ const numDivs = 36;
 const maxHits = 10;
 
 let hits = 1;
-let missCount = 1;
+let missCount = 0;
 let firstHitTime = 0;
 
 function round() {
@@ -13,7 +13,7 @@ function round() {
   let divSelector = randomDivId();
   $(divSelector).addClass("target");
   $(divSelector).text(hits);
-  if (hits === maxHits) {
+  if (hits > maxHits) {
     endGame();
   }
 }
